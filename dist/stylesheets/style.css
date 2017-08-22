@@ -65,6 +65,7 @@ p {
 .section__content {
     width: 50%;
     float: left;
+    padding: 65px;
 }
 
 .section--fixed {
