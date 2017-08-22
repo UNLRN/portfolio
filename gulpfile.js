@@ -20,7 +20,6 @@ gulp.task('sass', function() {
 		autosemicolon: true,
 	}))
 	.pipe(gulp.dest('./dist/stylesheets'))
-	.pipe(reload({stream: true}))
 	.on('error', gutil.log);
 });
 
@@ -57,8 +56,7 @@ gulp.task('browser-sync', ['nodemon'], function() {
 });
 
 gulp.task('serve', ['browser-sync'], function() {
-	gulp.watch('./src/sass/**/*.*', ['sass']);
-	// gulp.watch('./dist/stylesheets/css/**/*.*').on('change', reload);
+	gulp.watch('./src/sass/**/*.*', ['sass']).on('change', reload);
 	gulp.watch('./dist/javascripts/**/*.*').on('change', reload);
 });
 

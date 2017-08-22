@@ -15,7 +15,8 @@
     "pug": "~2.0.0-beta11",
     "request": "^2.81.0",
     "semantic-ui": "^2.2.13",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.4.2",
+    "waypoints": "^4.0.1"
   },
   "devDependencies": {
     "babel": "^6.23.0",
