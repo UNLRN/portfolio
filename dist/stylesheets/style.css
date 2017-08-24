@@ -25,6 +25,10 @@ p {
     font-weight: 300;
 }
 
+.header__text {
+    font-size: 5em;
+}
+
 .hero {
     background-image: url("/images/hero.jpg");
     background-size: cover;
@@ -51,24 +55,32 @@ p {
 .section {
     display: inline-block;
     width: 100%;
-    min-height: 650px;
 }
 
-.section__title {
+.section__title-wrapper {
     float: left;
     width: 50%;
     margin: 0px;
     padding: 0px;
-    height: 100vh;
+    height: 100%;
 }
 
-.section__content {
-    width: 50%;
-    float: left;
-    padding: 65px;
+@media (max-width: 768px) {
+    .section__title-wrapper {
+        width: 100%;
+        height: 200px;
+    }
 }
 
-.section--fixed {
+.section__title-about, .section__title-projects, .section__title-skills, .section__title-contact {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+}
+
+.section__title-about--fixed, .section__title-projects--fixed, .section__title-skills--fixed, .section__title-contact--fixed {
     position: fixed;
     top: 0;
     left: 0;
@@ -76,38 +88,43 @@ p {
     height: 100vh;
 }
 
-.title__about {
+.section__content {
+    width: 50%;
+    float: left;
+    padding: 65px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .section__content {
+        width: 100%;
+    }
+}
+
+.helper__wrapper--center {
     position: relative;
-    text-align: center;
-    left: 50%;
     top: 50%;
+    left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
 }
 
-.title__projects {
-    position: relative;
-    text-align: center;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
+.section__title-about {
+    background-color: #111;
+    z-index: 2;
 }
 
-.title__skills {
-    position: relative;
-    text-align: center;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
+.section__title-projects {
+    background-color: #222;
+    z-index: 3;
 }
 
-.title__contact {
-    position: relative;
-    text-align: center;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
+.section__title-skills {
+    background-color: #333;
+    z-index: 4;
+}
+
+.section__title-contact {
+    background-color: #444;
+    z-index: 5;
 }

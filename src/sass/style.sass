@@ -1,3 +1,5 @@
+@import '1-base/base-dir'
+
 *
     box-sizing: border-box
     // border: 1px solid red
@@ -21,6 +23,8 @@ p
   line-height: 34px
   font-weight: 300
 
+.header__text
+    font-size: 5em
 
 .hero
     background-image: url('/images/hero.jpg')
@@ -29,67 +33,69 @@ p
     min-height: 100%
     height: 100%
     width: 100%
+    &__content
+        position: absolute
+        text-align: center
+        min-width: 300px
+        left: 50%
+        top: 50%
+        padding: 75px
+        background: rgba(255, 255, 255, .9)
+        outline: 4px double #fff
+        outline-offset: 8px
+        transform: translateX(-50%) translateY(-50%)
 
-.hero__content
-    position: absolute
-    text-align: center
-    min-width: 300px
-    left: 50%
-    top: 50%
-    padding: 75px
-    background: rgba(255, 255, 255, .9)
-    outline: 4px double #fff
-    outline-offset: 8px
-    transform: translateX(-50%) translateY(-50%)
 
 .section
     display: inline-block
     width: 100%
-    min-height: 650px
+    &__title-wrapper,
+        float: left
+        width: 50%
+        margin: 0px
+        padding: 0px
+        height: 100%
+        +tablet
+            width: 100%
+            height: 200px
+    &__title-about,
+    &__title-projects,
+    &__title-skills,
+    &__title-contact
+        position: relative
+        text-align: center
+        width: 100%
+        height: 100%
+        border: 1px solid red
+        &--fixed,
+            position: fixed
+            top: 0
+            left: 0
+            width: 50%
+            height: 100vh
+    &__content
+        width: 50%
+        float: left
+        padding: 65px
+        height: auto
+        +tablet
+            width: 100%
 
-.section__title
-    float: left
-    width: 50%
-    margin: 0px
-    padding: 0px
-    height: 100vh
-
-.section__content
-    width: 50%
-    float: left
-    padding: 65px
-
-.section--fixed
-    position: fixed
-    top: 0
-    left: 0
-    width: 50%
-    height: 100vh
-    
-.title__about
+.helper__wrapper--center
     position: relative
-    text-align: center
-    left: 50%
     top: 50%
+    left: 50%
     transform: translateX(-50%) translateY(-50%)
 
-.title__projects
-    position: relative
-    text-align: center
-    left: 50%
-    top: 50%
-    transform: translateX(-50%) translateY(-50%)
-
-.title__skills
-    position: relative
-    text-align: center
-    left: 50%
-    top: 50%
-    transform: translateX(-50%) translateY(-50%)
-
-.title__contact
-    position: relative
-    text-align: center
-    left: 50%
-    top: 50%
-    transform: translateX(-50%) translateY(-50%)
+.section__title-about
+    background-color: #111
+    z-index: 2
+.section__title-projects
+    background-color: #222
+    z-index: 3
+.section__title-skills
+    background-color: #333
+    z-index: 4
+.section__title-contact
+    background-color: #444
+    z-index: 5

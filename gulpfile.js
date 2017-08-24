@@ -34,7 +34,7 @@ gulp.task('nodemon', function(done) {
 	return nodemon({
 		script: './bin/www',
 		exec: 'babel-node --presets es2015',
-		ext: 'js pug',
+		ext: 'js',
 	}).on('start', function() {
 		if (!running) {
 			done();
@@ -56,8 +56,8 @@ gulp.task('browser-sync', ['nodemon'], function() {
 });
 
 gulp.task('serve', ['browser-sync'], function() {
-	gulp.watch('./src/sass/**/*.*', ['sass']).on('change', reload);
-	gulp.watch('./dist/javascripts/**/*.*').on('change', reload);
+    gulp.watch('./src/sass/**/*.sass', ['sass']).on('change', reload);
+    gulp.watch('./views/**/*.pug').on('change', reload);
 });
 
 gulp.task('default', ['sass', 'serve']);
