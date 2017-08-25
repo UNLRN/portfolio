@@ -77,7 +77,6 @@ p {
     text-align: center;
     width: 100%;
     height: 100%;
-    border: 1px solid red;
 }
 
 .section__title-about--fixed, .section__title-projects--fixed, .section__title-skills--fixed, .section__title-contact--fixed {
@@ -109,22 +108,50 @@ p {
     transform: translateX(-50%) translateY(-50%);
 }
 
+.header__text::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 25%;
+    z-index: -1;
+    height: 25px;
+    width: 30%;
+    background-color: #abc;
+}
+
 .section__title-about {
-    background-color: #111;
+    background-color: #f1f1f1;
     z-index: 2;
 }
 
 .section__title-projects {
-    background-color: #222;
+    background-color: #e1e1e1;
     z-index: 3;
 }
 
 .section__title-skills {
-    background-color: #333;
+    background-color: #d1d1d1;
     z-index: 4;
 }
 
 .section__title-contact {
-    background-color: #444;
+    background-color: #c1c1c1;
     z-index: 5;
+}
+
+.footer__wrapper {
+    border: 1px solid red;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 75px;
+    bottom: 0;
+    background-color: #222;
+}
+
+.footer__links li {
+    text-align: center;
+    line-height: 50px;
+    display: inline-block;
+    width: 33%;
 }
