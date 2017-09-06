@@ -16,49 +16,57 @@ block content
             .section__title-wrapper
                 .section__title-about
                     .helper__wrapper--center
-                        h1.header__text / About /
+                        h1.header__text.header__text--left About
             .section__content
-                h2  I'm a Full Stack Web Developer living in the metro Atlanta Area
-                p  I started out as a 3D Generalist. A love for photography and architecture led me to try and recreate what I saw in the real world in 3D as closely as possible. While I enjoyed the creative outlet this provided me, I soon realized that I enjoyed the technical side of 3D as well.
-                h3 Technical Artist
-                p  I started automating 
+                #about
+                    h2  I'm a Full Stack Web Developer living in the metro Atlanta Area
+                    p  I started out as a 3D Generalist. A love for photography and architecture led me to try and recreate what I saw in the real world in 3D as closely as possible. While I enjoyed the creative outlet this provided me, I soon realized that I enjoyed the technical side of 3D as well.
+                    h3 Technical Artist
+                    p  I started automating 
         .section
+            .section__content
+                #projects
+                    .section__project-tile
+                        img(src='/images/bandstalkr.jpg')
+                    .section__project-tile
+                        img(src='/images/ricknmorty.jpg')
+                    .section__project-tile
+                        img(src='/images/simpsons.jpg')
+                    .section__project-tile
+                        img(src='/images/playground_config.jpg')
+                    .section__project-tile
+                        img(src='/images/shade_config.jpg')
+                    .section__project-tile
+                        img(src='/images/webcoat_config.jpg')         
             .section__title-wrapper
                 .section__title-projects
                     .helper__wrapper--center
-                        h1.header__text / Projects /
-            .section__content
-                h1  Lorem ipsum dolor sit amet
-                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quo consectetur accusantium animi unde cum enim tenetur illum illo aspernatur nam, doloremque, quisquam veritatis optio exercitationem dolorum porro quae ullam laborum est dignissimos nesciunt. Asperiores consequuntur iusto, maiores qui laborum rem voluptatibus repellat provident necessitatibus itaque sed inventore accusantium, minus reprehenderit saepe laboriosam! Ut amet aperiam dolorum aspernatur et quo, alias aliquid qui laborum ex, eaque inventore officia, voluptate cumque incidunt ratione suscipit accusantium repudiandae. Sequi vitae sunt iusto nam! Rerum quis, maxime recusandae minima odit, libero voluptatibus? Quos ratione itaque accusamus sunt repudiandae laboriosam aperiam voluptate delectus, corrupti sequi eius quisquam dicta laudantium rem quam officiis atque fuga quia aliquam! Esse ipsam minus veritatis, sapiente aspernatur possimus sunt. Non incidunt cumque iusto delectus voluptates quae excepturi ex commodi ratione, totam, dicta sapiente optio ullam quos veritatis, error voluptatum dolores animi. Molestias iste voluptate tenetur laudantium, laborum soluta, tempore voluptatum.
+                        h1.header__text.header__text--right Projects
         .section
             .section__title-wrapper
                 .section__title-skills
                     .helper__wrapper--center
-                        h1.header__text / Skills /
+                        h1.header__text.header__text--left Skills
             .section__content
-                h1  Lorem ipsum
-                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quo consectetur accusantium animi unde cum enim tenetur illum illo aspernatur nam, doloremque, quisquam veritatis optio exercitationem dolorum porro quae ullam laborum est dignissimos nesciunt. Asperiores consequuntur iusto, maiores qui laborum rem voluptatibus repellat provident necessitatibus itaque sed inventore accusantium, minus reprehenderit saepe laboriosam! Ut amet aperiam dolorum aspernatur et quo, alias aliquid qui laborum ex, eaque inventore officia, voluptate cumque incidunt ratione suscipit accusantium repudiandae. Sequi vitae sunt iusto nam! Rerum quis, maxime recusandae minima odit, libero voluptatibus? Quos ratione itaque accusamus sunt repudiandae laboriosam aperiam voluptate delectus, corrupti sequi eius quisquam dicta laudantium rem quam officiis atque fuga quia aliquam! Esse ipsam minus veritatis, sapiente aspernatur possimus sunt. Non incidunt cumque iusto delectus voluptates quae excepturi ex commodi ratione, totam, dicta sapiente optio ullam quos veritatis, error voluptatum dolores animi. Molestias iste voluptate tenetur laudantium, laborum soluta, tempore voluptatum.
+                #skills
+                    h1  Lorem ipsum
+                    p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quo consectetur accusantium animi unde cum enim tenetur illum illo aspernatur nam, doloremque, quisquam veritatis optio exercitationem dolorum porro quae ullam laborum est dignissimos nesciunt. Asperiores consequuntur iusto, maiores qui laborum rem voluptatibus repellat provident necessitatibus itaque sed inventore accusantium, minus reprehenderit saepe laboriosam! Ut amet aperiam dolorum aspernatur et quo, alias aliquid qui laborum ex, eaque inventore officia, voluptate cumque incidunt ratione suscipit accusantium repudiandae. Sequi vitae sunt iusto nam! Rerum quis, maxime recusandae minima odit, libero voluptatibus? Quos ratione itaque accusamus sunt repudiandae laboriosam aperiam voluptate delectus, corrupti sequi eius quisquam dicta laudantium rem quam officiis atque fuga quia aliquam! Esse ipsam minus veritatis, sapiente aspernatur possimus sunt. Non incidunt cumque iusto delectus voluptates quae excepturi ex commodi ratione, totam, dicta sapiente optio ullam quos veritatis, error voluptatum dolores animi. Molestias iste voluptate tenetur laudantium, laborum soluta, tempore voluptatum.
         .section
+            .section__content
+                #contact
+                    h1 Contact Me
             .section__title-wrapper
                 .section__title-contact
                     .helper__wrapper--center
-                        h1.header__text / Contact /
-            .section__content
-                h1 Contact Me
-    .footer__wrapper
-        ul.footer__links
-            li
-                a(href='#') Email
-            li
-                a(href='#') Github
-            li
-                a(href='#') Linkedin
+                        h1.header__text.header__text--right Contact
+    include layouts/include/footer
 
 block footerscripts
     // jQuery
     script(src='https://code.jquery.com/jquery-3.2.1.min.js')
-    // Waypoints
-    script(src='/javascripts/jquery.waypoints.min.js')
+    //ScrollMagic
+    script(src='/javascripts/vendor/ScrollMagic.min.js')
+    script(src='/javascripts/vendor/debug.addIndicators.min.js')
     // Semantic-UI JS
     script(src='/semantic/semantic.min.js')
     // JavaScript

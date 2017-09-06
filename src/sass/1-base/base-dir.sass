@@ -1,10 +1,16 @@
-$tablet-width: 768px
-$desktop-width: 1024px
+@import 'typography'
+@import 'variables'
+@import 'mixins'
 
-=tablet 
-  @media (max-width: #{$tablet-width})
-    @content
+*
+	box-sizing: border-box
+	// border: 1px solid red
 
-=desktop
-  @media (min-width: #{$desktop-width})
-    @content
+body, html 
+	left: 0
+	top: 0
+	margin: 0px
+	padding: 0px
+	font-family: 'Roboto', sans-serif
+	height: 100%
+	width: 100%

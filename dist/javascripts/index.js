@@ -1,46 +1,44 @@
+$(document).ready(function () {
 
-let $window = $(window);
-let $hero = $('.hero');
-let $titleWrapper = $('.section__title-wrapper');
-let $about = $('.section__title-about');
-let $projects = $('.section__title-projects');
-let $skills = $('.section__title-skills');
-let $contact = $('.section__title-contact');
+    let controller = new ScrollMagic.Controller();
 
-$about.waypoint(function (direction) {
-    if ((direction == 'down') && (!$about.hasClass('section__title-about--fixed')) && ($titleWrapper.width() !== $window.width())) {
-        $about.addClass('section__title-about--fixed');
-    } else if ((direction == 'up') && ($about.hasClass('section__title-about--fixed')) && ($titleWrapper.width() !== $window.width())) {
-        $about.removeClass('section__title-about--fixed');
-    }
+    $('.section__title-wrapper').each(function() {
+
+        let element = $($(this).find('.header__text'))[0]
+
+        let scene = new ScrollMagic.Scene({
+            triggerElement: this,
+            reverse: false,
+        })
+        .setClassToggle(element, 'fade-in')
+        // .addIndicators({
+        //     colorTrigger: 'red',
+        //     colorStart: 'white',
+        //     colorEnd: 'red',
+        // })
+        .addTo(controller);
+    });
+
+    $('.section').each(function() {
+
+        let element = $($(this).find('.section__title-wrapper'))[0]
+        let end = $(this).find('.section__content').height() > $(element).height() ? $(this).find('.section__content').height()-$(element).height() : 1;
+        console.log(end)
+
+        let projectsPin = new ScrollMagic.Scene({
+            triggerElement: element,
+            triggerHook: 0,
+            duration: end,
+        })
+        .setPin(element, {pushFollowers: true})
+        .addIndicators({
+            colorTrigger: 'red',
+            colorStart: 'white',
+            colorEnd: 'red',
+        })
+        .addTo(controller);
+
+    })
+
 });
 
-$projects.waypoint(function (direction) {
-    if ((direction == 'down') && (!$projects.hasClass('section__title-projects--fixed')) && ($titleWrapper.width() !== $window.width())) {
-        $about.removeClass('section__title-about--fixed');
-        $projects.addClass('section__title-projects--fixed');
-    } else if ((direction == 'up') && ($projects.hasClass('section__title-projects--fixed')) && ($titleWrapper.width() !== $window.width())) {
-        $projects.removeClass('section__title-projects--fixed');
-        $about.addClass('section__title-about--fixed');
-    }
-});
-
-$skills.waypoint(function (direction) {
-    if ((direction == 'down') && (!$skills.hasClass('section__title-skills--fixed')) && ($titleWrapper.width() !== $window.width())) {
-        $projects.removeClass('section__title-projects--fixed');
-        $skills.addClass('section__title-skills--fixed');
-    } else if ((direction == 'up') && ($skills.hasClass('section__title-skills--fixed')) && ($titleWrapper.width() !== $window.width())) {
-        $skills.removeClass('section__title-skills--fixed');
-        $projects.addClass('section__title-projects--fixed');
-    }
-});
-
-$contact.waypoint(function (direction) {
-    if ((direction == 'down') && (!$contact.hasClass('section__title-contact--fixed')) && ($titleWrapper.width() !== $window.width())) {
-        $skills.removeClass('section__title-skills--fixed');
-        $contact.addClass('section__title-contact--fixed');
-    } else if ((direction == 'up') && ($contact.hasClass('section__title-contact--fixed')) && ($titleWrapper.width() !== $window.width())) {
-        $contact.removeClass('section__title-contact--fixed');
-        $skills.addClass('section__title-skills--fixed');
-    }
-});
